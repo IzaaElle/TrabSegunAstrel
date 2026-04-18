@@ -111,7 +111,7 @@ public class GrathScript
         return false;
     }
 
-    void REconstructPath(NodeScript start, NodeScript end)
+    void ReconstructPath(NodeScript start, NodeScript end)
     {
         path.Clear();
         path.Add(end);
