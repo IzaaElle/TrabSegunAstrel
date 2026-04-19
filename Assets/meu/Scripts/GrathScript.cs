@@ -89,6 +89,7 @@ public class GrathScript
             NodeScript esseNode = abrirSet[i];
             if(esseNode.getIdCaminho() == endNode.getIdCaminho())
             {
+                ReconstructPath(startNode,endNode);
                 return true;
             }
         abrirSet.RemoveAt(i);
@@ -125,8 +126,12 @@ public class GrathScript
         
     }
 
-
-
+    /*                             VER DEPOIS PQ TA ERRADO ASS. CAIO, VUGO ZEZÉ
+    public List<Node> GetPath()
+    {
+        return path;
+    }
+    */
 
 
 }
