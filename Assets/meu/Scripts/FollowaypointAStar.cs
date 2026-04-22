@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class FollowaypointAStar : MonoBehaviour
 {
     public WaypointsScripts manager;
@@ -14,16 +13,17 @@ public class FollowaypointAStar : MonoBehaviour
     float rotSpeed = 4.0f;
     int currentWaypointIndex = 0;
 
+
     private void Start()
     {
         waypoints = manager.pontosWay;
         graph = manager.graph;
         currentWaypoints = waypoints[0];
-
+        
         //Invoke(nameof(GBanho), 2.0f);
     }
 
-
+    
 
     /*                                  VER DEPOIS PQ TA ERRADO ASS. CAIO, VUGO ZEZÉ
      *                                  */
@@ -56,10 +56,9 @@ public class FollowaypointAStar : MonoBehaviour
     //Botoes
 
 
-    public void GStart()
+    public void GFechar()
     {
-        graph.aEstrela(currentWaypoints, waypoints[0]);
-        currentWaypointIndex = 0;
+        Application.Quit();
     }
 
     public void GBateria()
@@ -84,7 +83,7 @@ public class FollowaypointAStar : MonoBehaviour
     }
     public void GLavarMaos()
     {
-        graph.aEstrela(currentWaypoints, waypoints[5]);
+        graph.aEstrela(currentWaypoints, waypoints[3]);
         currentWaypointIndex = 0;
     }
     public void GBanho()
@@ -100,7 +99,7 @@ public class FollowaypointAStar : MonoBehaviour
     public void GRoupa()
     {
         graph.aEstrela(currentWaypoints, waypoints[8]);
-        currentWaypointIndex = 0;
+        currentWaypointIndex = 0;        
     }
     public void GTV()
     {
@@ -116,6 +115,11 @@ public class FollowaypointAStar : MonoBehaviour
     public void GRoupaLavar()
     {
         graph.aEstrela(currentWaypoints, waypoints[9]);
+        currentWaypointIndex = 0;
+    }
+    public void GJantar()
+    {
+        graph.aEstrela(currentWaypoints, waypoints[16]);
         currentWaypointIndex = 0;
     }
 
