@@ -105,7 +105,21 @@ public class GrathScript
                     continue;
                 }
                 testGCusto = esseNode.gCusto + HeuAlgumaCoisa(esseNode, visinho);
+                if (abrirSet.IndexOf(visinho) == -1)
+                {
+                    abrirSet.Add(visinho);
+                    testeDeuBom = true;
+                }
+                else if (testGCusto < visinho.gCusto) testeDeuBom = true;
+                else testeDeuBom = false;
 
+                if (testeDeuBom)
+                {
+                    visinho.pai = esseNode;
+                    visinho.gCusto = testGCusto;
+                    visinho.hCusto = HeuAlgumaCoisa(visinho, endNode);
+                    visinho.fCusto = visinho.gCusto + visinho.hCusto;
+                }
             }
 
         }
@@ -123,15 +137,14 @@ public class GrathScript
             current = current.pai;
         }
         path.Insert(0, start);
-        
+
     }
 
     /*                             VER DEPOIS PQ TA ERRADO ASS. CAIO, VUGO ZEZÉ
-    public List<Node> GetPath()
+    */
+    
+    public List<NodeScript> GetPath()
     {
         return path;
     }
-    */
-
-
 }
